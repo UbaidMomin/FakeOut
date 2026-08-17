@@ -1,0 +1,10 @@
+﻿venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.vscode/
+.idea/
+db.sqlite3
+FakeOutMVP-main/
+FakeOutMVP-main1/

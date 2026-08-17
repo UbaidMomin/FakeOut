@@ -1,0 +1,89 @@
+{% extends 'FakeOutApp/base.html' %}
+{% load static %}
+
+{% block title %}Full Report{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1>Website Report</h1>
+        <p>Full analysis details for the site you checked.</p>
+    </div>
+</section>
+
+<section class="report-content">
+    <div class="container">
+
+        {% if error %}
+        <div class="report-error-card">
+            <h3>Something went wrong</h3>
+            <p>{{ error }}</p>
+            <a href="{% url 'FakeOutApp:home' %}" class="btn btn-primary">Back to Home</a>
+        </div>
+
+        {% elif result %}
+        <div class="report-card">
+            <div class="report-top">
+                <div class="report-domain">
+                    <span class="report-domain-label">Analyzed URL</span>
+                    <span class="report-domain-value">{{ target_url }}</span>
+                </div>
+
+                <div class="report-badge level-{{ result.classification|lower }}">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3z" fill="currentColor" />
+                        <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    {{ result.classification }}
+                </div>
+            </div>
+
+            <div class="report-score-row">
+                <div class="report-score-label">Risk Score</div>
+                <div class="report-score-value">{{ result.score }}<span>/100</span></div>
+            </div>
+            <div class="report-score-bar">
+                <span class="level-{{ result.classification|lower }}" style="width: {{ result.score }}%;"></span>
+            </div>
+
+            {% if result.government_verified %}
+            <div class="gov-verified-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M9 12l2 2 4-4" />
+                    <circle cx="12" cy="12" r="9" />
+                </svg>
+                Verified Government Domain
+            </div>
+            {% endif %}
+
+            <h3 class="reasons-heading">Why this score?</h3>
+            <ul class="reasons-list">
+                {% for reason in result.reasons %}
+                <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+
+            {% if result.recommended_official_website %}
+            <div class="official-site-box">
+                <span>Looking for the real site?</span>
+                <a href="{{ result.recommended_official_website }}" target="_blank" rel="noopener noreferrer">
+                    {{ result.recommended_official_website }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        {% else %}
+        <div class="report-error-card">
+            <h3>No URL provided</h3>
+            <p>Paste a website URL on the home page to get a full report.</p>
+            <a href="{% url 'FakeOutApp:home' %}" class="btn btn-primary">Back to Home</a>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}

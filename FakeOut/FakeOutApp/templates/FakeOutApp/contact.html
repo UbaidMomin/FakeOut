@@ -1,0 +1,60 @@
+{% extends 'FakeOutApp/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have a question or feedback? Send us a message below.</p>
+    </div>
+</section>
+
+<section class="contact-content">
+    <div class="container contact-grid">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>We try to respond to every message within 1-2 business days.</p>
+
+            <div class="info-item">
+                <span class="info-icon">✉️</span>
+                <div>
+                    <strong>Email</strong>
+                    <p>support@fakeout.example</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">💬</span>
+                <div>
+                    <strong>Help Center</strong>
+                    <p>Check our FAQ for quick answers</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" method="post" action="{% url 'FakeOutApp:contact' %}" novalidate>
+            {% csrf_token %}
+            <div class="form-row">
+                <label for="id_name">Name</label>
+                <input type="text" id="id_name" name="name" placeholder="Your full name" value="{{ form_data.name|default:'' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="id_email">Email address</label>
+                <input type="email" id="id_email" name="email" placeholder="you@example.com" value="{{ form_data.email|default:'' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="id_subject">Subject</label>
+                <input type="text" id="id_subject" name="subject" placeholder="What's this about?" value="{{ form_data.subject|default:'' }}">
+            </div>
+            <div class="form-row">
+                <label for="id_message">Message</label>
+                <textarea id="id_message" name="message" rows="6" placeholder="Type your message here..."
+                    required>{{ form_data.message|default:'' }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

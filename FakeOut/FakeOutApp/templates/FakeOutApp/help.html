@@ -1,0 +1,241 @@
+﻿{% extends 'FakeOutApp/base.html' %}
+
+{% block title %}Help & FAQ{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1>Help & FAQ</h1>
+        <p>Find answers to common questions about FakeOut.</p>
+    </div>
+</section>
+
+<section class="help-content">
+    <div class="container help-grid">
+
+        <aside class="help-sidebar">
+            <button class="sidebar-btn active" data-category="general">General</button>
+            <button class="sidebar-btn" data-category="safety">Safety & Security</button>
+            <button class="sidebar-btn" data-category="extension">Extension</button>
+            <button class="sidebar-btn" data-category="privacy">Privacy</button>
+            <button class="sidebar-btn" data-category="troubleshooting">Troubleshooting</button>
+        </aside>
+
+        <div class="help-main">
+            <div class="help-illustration">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" stroke="#2563eb" stroke-width="6" fill="none"/>
+                    <circle cx="60" cy="60" r="30" stroke="#2563eb" stroke-width="6" fill="none"/>
+                    <rect x="57" y="6" width="6" height="20" rx="3" fill="#2563eb"/>
+                    <rect x="57" y="94" width="6" height="20" rx="3" fill="#2563eb"/>
+                    <rect x="94" y="57" width="20" height="6" rx="3" fill="#2563eb"/>
+                    <rect x="6" y="57" width="20" height="6" rx="3" fill="#2563eb"/>
+                </svg>
+            </div>
+
+            <!-- General -->
+            <div class="faq-group active" data-category="general">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is FakeOut?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FakeOut is a web-based tool that helps you check whether a website is safe, suspicious, or potentially a phishing site before you share any personal information.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does FakeOut work?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply paste a website URL into the analysis bar on our homepage. FakeOut will scan the site for known threats, suspicious patterns, SSL issues, and domain reputation to give you a clear risk score.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What do the risk levels mean?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Safe (0–30):</strong> The website appears legitimate with no known threats.<br>
+                        <strong>Suspicious (31–70):</strong> Some warning signs detected — proceed with caution.<br>
+                        <strong>Dangerous (71–100):</strong> High risk of phishing or malware. Avoid sharing any data.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my data stored?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. FakeOut does not store the URLs you scan or any personal data. All analysis is performed in real-time and discarded immediately after.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I report a wrong result?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If you believe a result is incorrect, please visit our <a href="{% url 'FakeOutApp:contact' %}">Contact page</a> and submit a report. We review all feedback to improve our detection accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety & Security -->
+            <div class="faq-group" data-category="safety">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does FakeOut detect phishing sites?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FakeOut checks domain age, SSL certificates, known blacklists, URL patterns, and content similarity to legitimate sites to identify phishing attempts.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can FakeOut detect all threats?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No tool can guarantee 100% detection. FakeOut provides a strong first line of defense, but always use your own judgement and keep your browser and antivirus up to date.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does FakeOut verify government websites?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. FakeOut cross-references domains against known official government registries to help detect impersonation of government portals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extension -->
+            <div class="faq-group" data-category="extension">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I install the FakeOut extension?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Visit the Chrome Web Store, search for "FakeOut", click "Add to Chrome", and the extension will start protecting you automatically while you browse.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the extension work on other browsers?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Currently the extension is available for Chrome. Support for Firefox and Edge is planned for future releases.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the extension slow down my browser?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all. FakeOut is designed to be lightweight and only activates when you visit a new page, with minimal impact on performance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy -->
+            <div class="faq-group" data-category="privacy">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does FakeOut collect my browsing history?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. FakeOut does not track, collect, or store your browsing history. URL checks are done in real-time and never logged.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my account information safe?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. All passwords are securely hashed using industry-standard algorithms. We never store passwords in plain text.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I delete my account?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Contact us through the <a href="{% url 'FakeOutApp:contact' %}">Contact page</a> with your email and we will delete your account and all associated data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="faq-group" data-category="troubleshooting">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>The analysis is not loading. What should I do?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Try refreshing the page, clearing your browser cache, or checking your internet connection. If the issue persists, contact our support team.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>I can not log in to my account.</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Make sure you are using the correct email and password. If you have forgotten your password, use the "Forgot password?" link on the login page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>The extension is not working after installation.</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Try restarting your browser. If the issue continues, remove and reinstall the extension from the Chrome Web Store. Make sure you have the latest version of Chrome.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Sidebar category switching
+    document.querySelectorAll('.sidebar-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.category;
+            document.querySelectorAll('.faq-group').forEach(g => {
+                g.classList.toggle('active', g.dataset.category === cat);
+            });
+            // Close all open answers when switching category
+            document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+        });
+    });
+
+    // FAQ accordion toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            q.parentElement.classList.toggle('open');
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends 'FakeOutApp/base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1>About FakeOut</h1>
+        <p>Learn more about who we are and what we're building.</p>
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container about-grid">
+        <div class="about-copy">
+            <p>
+                FakeOut is a small project built to help people make more
+                confident, informed decisions online. We believe everyone
+                deserves easy-to-use tools that make browsing the web a
+                little safer.
+            </p>
+            <p>
+                This site is powered by Django, with clean, separated
+                HTML, CSS, and JavaScript so it's easy to read, extend,
+                and maintain.
+            </p>
+
+            <div class="about-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5l-8-3z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Secure Browsing</h4>
+                        <p>Built with security and privacy in mind from day one.</p>
+                    </div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Fast & Simple</h4>
+                        <p>No clutter, no confusion — just clear, quick answers.</p>
+                    </div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="4" y="4" width="16" height="16" rx="3" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Privacy Focused</h4>
+                        <p>We never store or share your data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="mission-card">
+            <div class="mission-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="5" />
+                    <circle cx="12" cy="12" r="1.2" fill="currentColor" />
+                </svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+                To make the internet a little safer and a little easier
+                to navigate — one simple tool at a time.
+            </p>
+        </aside>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <div class="team-heading">
+            <h2>Meet the Team</h2>
+            <p>The people behind FakeOut.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="{% static 'FakeOutApp/images/team/T1.jpeg' %}" alt="Ayan" class="team-photo">
+                <h4>Ayan</h4>
+                <span class="team-role">Team Leader</span>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'FakeOutApp/images/team/T4.jpeg' %}" alt="Ubaid" class="team-photo">
+                <h4>Ubaid</h4>
+                <span class="team-role">UI/UX Designer</span>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'FakeOutApp/images/team/T5.jpeg' %}" alt="Alfiya" class="team-photo">
+                <h4>Alfiya</h4>
+                <span class="team-role">BackEnd Dev</span>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'FakeOutApp/images/team/T3.jpeg' %}" alt="Nazmeen" class="team-photo">
+                <h4>Nazmeen</h4>
+                <span class="team-role">Support</span>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'FakeOutApp/images/team/T2.jpeg' %}" alt="Bushra" class="team-photo">
+                <h4>Bushra</h4>
+                <span class="team-role">Support</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
