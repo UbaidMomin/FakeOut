@@ -1,0 +1,23 @@
+This Are The Command To Be Run
+
+For Front-End
+
+pip install django
+pip install psycopg
+pip install psycopg[binary]
+python manage.py migrate
+python manage.py makemigrations
+pip install httpx
+python manage.py runserver 8001
+
+For Fast-Api
+
+uvicorn app.main:app --reload --port 8000
+ pip install -r requirements.txt
+
+
+If You Want Virtual Env
+
+py -3.13 -m venv venv
+venv\Scripts\Activate.ps1
+
